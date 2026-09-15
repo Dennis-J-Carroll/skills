@@ -27,12 +27,7 @@ jobs:
       - name: Scan the library mirror
         run: |
           chmod +x mirror/library/skill-shop.sh
-          set +e
-          bash -x mirror/library/skill-shop.sh scan --root "$GITHUB_WORKSPACE/mirror/library" 2>scan-trace.log
-          code=$?
-          echo "scan exit=$code"
-          tail -60 scan-trace.log
-          exit 0
+          bash mirror/library/skill-shop.sh scan --root "$GITHUB_WORKSPACE/mirror/library"
 
       - name: Detect drift
         id: drift
