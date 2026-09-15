@@ -21,19 +21,13 @@ jobs:
         with:
           repository: Dennis-J-Carroll/skills-library
           token: ${{ secrets.LIBRARY_TOKEN }}
-          path: library
-
-      - name: Debug layout
-        run: |
-          pwd
-          ls -la
-          echo "--- library ---"
-          ls -la library | head -20
+          # mirror root lands here; its skill sources live at mirror/library/
+          path: mirror
 
       - name: Scan the library mirror
         run: |
-          chmod +x library/skill-shop.sh
-          bash library/skill-shop.sh scan --root "$GITHUB_WORKSPACE/library"
+          chmod +x mirror/library/skill-shop.sh
+          bash mirror/library/skill-shop.sh scan --root "$GITHUB_WORKSPACE/mirror/library"
 
       - name: Detect drift
         id: drift
@@ -42,7 +36,7 @@ jobs:
           SKILL_SHOP_PUB_SKILLS: ${{ github.workspace }}
         run: |
           set +e
-          bash library/skill-shop.sh drift --report > drift-report.md
+          bash mirror/library/skill-shop.sh drift --report > drift-report.md
           code=$?
           echo "code=$code" >> "$GITHUB_OUTPUT"
           echo "--- drift report ---"
