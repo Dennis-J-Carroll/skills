@@ -23,6 +23,13 @@ jobs:
           token: ${{ secrets.LIBRARY_TOKEN }}
           path: library
 
+      - name: Debug layout
+        run: |
+          pwd
+          ls -la
+          echo "--- library ---"
+          ls -la library | head -20
+
       - name: Scan the library mirror
         run: |
           chmod +x library/skill-shop.sh
