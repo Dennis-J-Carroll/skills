@@ -1,0 +1,4 @@
+interface:
+  display_name: "Beat Skeleton"
+  short_description: "Extract story structure for cold rewriting"
+  default_prompt: "Use $beat-skeleton to extract a causality-locked beat skeleton and weakness audit from this story draft."

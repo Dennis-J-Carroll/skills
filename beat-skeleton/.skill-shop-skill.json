@@ -1,0 +1,14 @@
+{
+  "name": "beat-skeleton",
+  "version": "2.1",
+  "grade": "B",
+  "score": 73,
+  "pass_rate": 83,
+  "sha": "9e33007ba46da731b8ab21157e4dfcc4237b280c",
+  "source_path": "/home/dennisjcarroll/Desktop/projects/_WORKBENCH_/DennMade Skill s+/beat-skeleton",
+  "source_type": "dir",
+  "description": "Extract a token-efficient, causality-locked beat skeleton from story prose. Use when converting drafts into cold-rewrite plans, auditing story structure, diagnosing flat scenes, or reducing a scene, chapter, or manuscript to its causal spine. Do not use for line editing, voice matching, continuity bibles, or prose generation.",
+  "license": "MIT",
+  "graduated_repo": "",
+  "published": "2026-09-15T15:14:52Z"
+}
