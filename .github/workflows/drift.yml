@@ -25,8 +25,8 @@ jobs:
 
       - name: Scan the library mirror
         run: |
-          chmod +x skill-shop.sh
-          bash skill-shop.sh scan --root "$GITHUB_WORKSPACE/library"
+          chmod +x library/skill-shop.sh
+          bash library/skill-shop.sh scan --root "$GITHUB_WORKSPACE/library"
 
       - name: Detect drift
         id: drift
@@ -35,7 +35,7 @@ jobs:
           SKILL_SHOP_PUB_SKILLS: ${{ github.workspace }}
         run: |
           set +e
-          bash skill-shop.sh drift --report > drift-report.md
+          bash library/skill-shop.sh drift --report > drift-report.md
           code=$?
           echo "code=$code" >> "$GITHUB_OUTPUT"
           echo "--- drift report ---"
